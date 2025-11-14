@@ -23,8 +23,6 @@ Test Deployment: Run the application locally, upload images (e.g., cat.png), and
 
 ### PROGRAM:
 ```
-
-
 import os, io, json, base64, requests, gradio as gr
 from PIL import Image
 from dotenv import load_dotenv, find_dotenv
@@ -61,9 +59,10 @@ demo = gr.Interface(
     fn=captioner,
     inputs=gr.Image(label="Upload Image", type="pil"),
     outputs=gr.Textbox(label="Generated Caption"),
-    title="🖼️ Image Captioning with BLIP",
-    description="Upload any image (like cat.png) and generate an AI-based caption using the BLIP model.",
-    allow_flagging="never"
+    title="🖼 Image Captioning with BLIP",
+    description="Upload any image and generate an AI-based caption using the BLIP model.",
+    allow_flagging="never",
+    examples=["doggg.jpeg"]
 )
 
 demo.launch(share=True)
@@ -71,7 +70,7 @@ demo.launch(share=True)
 ```
 ### OUTPUT:
 
-<img width="1168" height="622" alt="exp 6" src="https://github.com/user-attachments/assets/da92a5ba-beda-47c0-94e8-d9b20bfad6ea" />
+<img width="912" height="502" alt="exp   6" src="https://github.com/user-attachments/assets/90131f77-3af7-4902-8af6-8d11fd59abb8" />
 
 ### RESULT:
 The prototype image captioning application using the BLIP model and Gradio framework was successfully developed and deployed, generating accurate captions for uploaded images.
